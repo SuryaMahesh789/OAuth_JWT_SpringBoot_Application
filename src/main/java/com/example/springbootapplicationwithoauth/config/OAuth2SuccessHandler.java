@@ -1,6 +1,8 @@
 package com.example.springbootapplicationwithoauth.config;
 
 
+import com.example.springbootapplicationwithoauth.entity.User;
+import com.example.springbootapplicationwithoauth.service.UserService;
 import com.example.springbootapplicationwithoauth.util.JwtUtil;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -16,11 +18,14 @@ import java.io.IOException;
 @Component
 public class OAuth2SuccessHandler implements AuthenticationSuccessHandler {
 
+    private final UserService userService;
+
     private final JwtUtil jwtUtil;
 
-    public OAuth2SuccessHandler(JwtUtil jwtUtil)
+    public OAuth2SuccessHandler(JwtUtil jwtUtil, UserService userService)
     {
         this.jwtUtil=jwtUtil;
+        this.userService = userService;
     }
 
     @Override
@@ -32,6 +37,10 @@ public class OAuth2SuccessHandler implements AuthenticationSuccessHandler {
         OAuth2User oauthUser = (OAuth2User) authentication.getPrincipal();
 
         String email = oauthUser.getAttribute("email");
+        String name = oauthUser.getAttribute("name");
+
+        // 🔥 Save or fetch user
+        User user = userService.getOrCreateUser(name, email);
 
         String token = jwtUtil.generateToken(email);
 
