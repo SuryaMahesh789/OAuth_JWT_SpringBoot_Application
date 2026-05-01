@@ -13,8 +13,14 @@ public class HomeController
     @GetMapping("/home")
     public Map<String,Object> home(Authentication authentication)
     {
-        OAuth2User oAuth2User = (OAuth2User) authentication.getPrincipal();
-        return oAuth2User.getAttributes();
+        Object principal = authentication.getPrincipal();
+
+        if (principal instanceof OAuth2User oauthUser) {
+            return oauthUser.getAttributes(); // OAuth flow
+        }
+
+        // JWT flow
+        return Map.of("email", principal.toString());
     }
 
     @GetMapping("/")
