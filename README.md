@@ -72,3 +72,25 @@ src/main/java/com/project/
 ├── repository/         # Spring Data JPA Interfaces
 └── entity/             # JPA Entities (User Model)
 
+---
+
+## 🔐 Authentication Flow (OAuth2)
+
+<img width="747" height="562" alt="image" src="https://github.com/user-attachments/assets/d51cc36f-96e9-4549-ae13-ede238b4240b" />
+
+Flow Breakdown
+User hits protected endpoint
+Redirected to Google OAuth
+User authenticates
+Google returns user details
+User is created/fetched from DB
+JWT token generated
+Token returned to client
+
+---
+
+## 🛡️ Authorization Flow (JWT)
+
+<img width="869" height="432" alt="image" src="https://github.com/user-attachments/assets/909d512e-80f2-4411-9ac4-8a4552edf27a" />
+
+
