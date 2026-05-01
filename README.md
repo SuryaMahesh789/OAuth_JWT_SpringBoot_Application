@@ -62,7 +62,6 @@ Once the user has a token, every subsequent request follows this high-speed vali
 ---
 
 ## 📂 Project Structure
-```text
 src/main/java/com/project/
 ├── config/             # SecurityConfig & OAuth2SuccessHandler
 ├── security/           # Custom JwtFilter
