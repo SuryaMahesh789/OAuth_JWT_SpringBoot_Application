@@ -58,19 +58,6 @@ Once the user has a token, every subsequent request follows this high-speed vali
 *   **Tokens:** JJWT (Java JWT library)
 *   **Database:** MySQL
 *   **Utilities:** Lombok, Spring Data JPA
-
----
-
-## 📂 Project Structure
-src/main/java/com/project/
-├── config/             # SecurityConfig & OAuth2SuccessHandler
-├── security/           # Custom JwtFilter
-├── util/               # JwtUtil (Token Generation & Validation)
-├── controller/         # Secured REST Endpoints
-├── service/            # Business Logic & User Management
-├── repository/         # Spring Data JPA Interfaces
-└── entity/             # JPA Entities (User Model)
-
 ---
 
 ## 🔐 Authentication Flow (OAuth2)
@@ -88,8 +75,21 @@ Token returned to client
 
 ---
 
+
 ## 🛡️ Authorization Flow (JWT)
 
 <img width="869" height="432" alt="image" src="https://github.com/user-attachments/assets/909d512e-80f2-4411-9ac4-8a4552edf27a" />
 
 
+
+---
+
+## 📂 Project Structure
+```text src/main/java/com/project/
+├── config/             # SecurityConfig & OAuth2SuccessHandler
+├── security/           # Custom JwtFilter
+├── util/               # JwtUtil (Token Generation & Validation)
+├── controller/         # Secured REST Endpoints
+├── service/            # Business Logic & User Management
+├── repository/         # Spring Data JPA Interfaces
+└── entity/             # JPA Entities (User Model)
