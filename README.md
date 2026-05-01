@@ -80,6 +80,8 @@ Token returned to client
 
 <img width="869" height="432" alt="image" src="https://github.com/user-attachments/assets/909d512e-80f2-4411-9ac4-8a4552edf27a" />
 
+## System Architecture
+<img width="1520" height="450" alt="image" src="https://github.com/user-attachments/assets/01481873-88ca-44f3-801a-32fb50ad1499" />
 
 
 ---
